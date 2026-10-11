@@ -1,0 +1,147 @@
+/* Portfolio Mickael Bestard — feuille de style unique */
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Serif:ital,wght@0,400;0,600;1,400&display=swap');
+
+:root {
+  --paper: #EEF1F4;
+  --surface: #FFFFFF;
+  --ink: #1B2733;
+  --muted: #5A6878;
+  --prussian: #1F4E79;
+  --teal: #2A8C82;
+  --grid: #D5DCE4;
+  --todo-bg: #FFF4DC;
+  --todo-ink: #8A5A00;
+  --serif: "IBM Plex Serif", Georgia, "Times New Roman", serif;
+  --sans: "IBM Plex Sans", "Helvetica Neue", Arial, sans-serif;
+  --measure: 68ch;
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --paper: #121A22; --surface: #1A242E; --ink: #E4EAF0; --muted: #9AA8B6;
+    --prussian: #7FB2E5; --teal: #5CC4B8; --grid: #2A3744;
+    --todo-bg: #3A2E14; --todo-ink: #F2C46B;
+  }
+}
+
+* { box-sizing: border-box; }
+html { font-size: 112.5%; }
+body { margin: 0; background: var(--paper); color: var(--ink); font-family: var(--serif); line-height: 1.65; }
+a { color: var(--prussian); text-underline-offset: 3px; }
+a:focus-visible { outline: 2px solid var(--teal); outline-offset: 3px; }
+img, svg { max-width: 100%; height: auto; }
+.wrap { max-width: 980px; margin: 0 auto; padding: 0 1.5rem; }
+
+/* En-tête */
+.site-header { padding: 1.5rem 0; font-family: var(--sans); }
+.site-header .wrap { display: flex; justify-content: space-between; align-items: baseline; gap: 1rem; flex-wrap: wrap; }
+.site-header .name { font-weight: 600; color: var(--ink); text-decoration: none; }
+.site-header nav a { margin-left: 1.25rem; color: var(--muted); text-decoration: none; }
+.site-header nav a:hover { color: var(--ink); }
+
+/* Accueil */
+.hero { padding: 3rem 0 1rem; }
+.hero h1 { font-family: var(--sans); font-weight: 500; font-size: clamp(2rem, 5vw, 3.2rem); line-height: 1.15; margin: 0 0 1rem; max-width: 20ch; letter-spacing: -0.01em; }
+.hero .pitch { font-size: 1.15rem; max-width: var(--measure); color: var(--muted); }
+.wave { display: block; margin: 2rem 0 0; width: 100%; }
+.wave .axis { stroke: var(--grid); stroke-width: 1; }
+.wave .curve { stroke: var(--prussian); stroke-width: 2.5; fill: none; }
+.wave .ghost { stroke: var(--teal); stroke-width: 1.5; fill: none; stroke-dasharray: 4 5; }
+.wave text { font-family: var(--sans); font-size: 13px; fill: var(--muted); }
+
+/* Chaîne modéliser → simuler → piloter : une vraie séquence, d'où la numérotation */
+.section-title { font-family: var(--sans); font-size: .85rem; font-weight: 600; letter-spacing: .12em; text-transform: uppercase; color: var(--muted); margin: 3rem 0 1rem; }
+.pipeline { list-style: none; padding: 0; margin: 0 0 1.25rem; display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.25rem; }
+.pipeline li, .secondary { position: relative; display: flex; flex-direction: column; padding: 1.25rem 1.4rem; background: var(--surface); border: 1px solid var(--grid); border-radius: 10px; transition: border-color .15s, box-shadow .15s, transform .15s; }
+.pipeline li:hover, .secondary:hover, .pipeline li:focus-within, .secondary:focus-within { border-color: var(--prussian); box-shadow: 0 6px 18px rgba(0,0,0,.08); transform: translateY(-2px); }
+.pipeline .step { font-family: var(--sans); color: var(--teal); font-weight: 600; }
+.pipeline h2, .secondary h2 { font-family: var(--sans); font-size: 1.25rem; line-height: 1.25; margin: .2rem 0 .6rem; }
+.pipeline h2 a, .secondary h2 a { color: var(--ink); text-decoration: none; }
+.pipeline h2 a::after, .secondary h2 a::after { content: ""; position: absolute; inset: 0; border-radius: 10px; }
+.pipeline h2 a:focus-visible, .secondary h2 a:focus-visible { outline: none; }
+.pipeline li:focus-within, .secondary:focus-within { outline: 2px solid var(--teal); outline-offset: 2px; }
+.pipeline p, .secondary p { margin: 0 0 1rem; color: var(--muted); font-size: .95rem; flex: 1; }
+.more { font-family: var(--sans); font-size: .9rem; font-weight: 600; color: var(--prussian); }
+.more .arr { display: inline-block; transition: transform .15s; }
+.pipeline li:hover .arr, .secondary:hover .arr { transform: translateX(4px); }
+.secondary { margin: 0 0 3rem; border-left: 3px solid var(--prussian); }
+@media (prefers-reduced-motion: reduce) { .pipeline li, .secondary, .more .arr { transition: none; transform: none !important; } }
+
+/* Pages projet */
+.project { max-width: var(--measure); padding: 2rem 0 3rem; }
+.project .back { font-family: var(--sans); font-size: .9rem; }
+.project h1 { font-family: var(--sans); font-weight: 500; font-size: clamp(1.7rem, 4vw, 2.4rem); line-height: 1.2; margin: 1rem 0 .5rem; }
+.project .lead { font-size: 1.1rem; color: var(--muted); margin-top: 0; }
+.project h2 { font-family: var(--sans); font-size: 1.2rem; margin: 2.25rem 0 .5rem; padding-top: .75rem; border-top: 1px solid var(--grid); }
+.figures { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 1rem; margin: 1rem 0; }
+.figures div { background: var(--surface); padding: 1rem; }
+.figures strong { display: block; font-family: var(--sans); font-size: 1.6rem; font-weight: 500; color: var(--prussian); }
+.figures span { font-family: var(--sans); font-size: .85rem; color: var(--muted); }
+figure { margin: 1.5rem 0; }
+.fig-placeholder { aspect-ratio: 16 / 9; background-color: var(--surface); background-image: repeating-linear-gradient(0deg, transparent 0 23px, var(--grid) 23px 24px), repeating-linear-gradient(90deg, transparent 0 23px, var(--grid) 23px 24px); display: grid; place-items: center; font-family: var(--sans); color: var(--muted); text-align: center; padding: 1rem; }
+figcaption { font-family: var(--sans); font-size: .85rem; color: var(--muted); margin-top: .5rem; }
+.stack { font-family: var(--sans); font-size: .95rem; }
+.links a { font-family: var(--sans); margin-right: 1.25rem; }
+
+/* Placeholders visibles : à supprimer au fur et à mesure */
+.todo { background: var(--todo-bg); color: var(--todo-ink); outline: 1px dashed var(--todo-ink); padding: 0 .3em; font-family: var(--sans); font-size: .92em; }
+
+/* Pied de page */
+.site-footer { border-top: 1px solid var(--grid); padding: 1.5rem 0 2.5rem; font-family: var(--sans); font-size: .9rem; color: var(--muted); }
+.site-footer a { margin-right: 1.25rem; }
+
+@media (max-width: 720px) {
+  .pipeline { grid-template-columns: 1fr; }
+  .site-header nav a { margin: 0 1rem 0 0; }
+}
+
+/* Notations mathématiques (sans dépendance externe) */
+.m { font-style: italic; white-space: nowrap; }
+.m .r { font-style: normal; }
+.eq { display: block; margin: 1rem 0; padding: .75rem 1rem; background: var(--surface); font-size: 1.05rem; text-align: center; overflow-x: auto; white-space: nowrap; }
+
+/* Illustration de la démarche (accueil) */
+.approach-wrap { margin: 2.5rem 0 0; overflow-x: auto; }
+.approach { display: block; width: 100%; min-width: 640px; overflow: visible; }
+.approach .frame { fill: var(--surface); stroke: var(--grid); }
+.approach .main { fill: none; stroke: var(--prussian); stroke-width: 2.2; stroke-linejoin: round; }
+.approach .char { stroke: var(--teal); stroke-width: 1; opacity: .7; }
+.approach .axis, .approach .tick { stroke: var(--grid); stroke-width: 1; }
+.approach .dot { fill: var(--prussian); }
+.approach .mode { fill: var(--teal); }
+.approach .edge { stroke: var(--grid); stroke-width: .8; }
+.approach .cost { fill: none; stroke: var(--teal); stroke-width: 1.5; stroke-dasharray: 3 3; }
+.approach .arrow, .approach .loop { fill: none; stroke: var(--muted); stroke-width: 1.3; }
+.approach .loop { stroke-dasharray: 5 4; }
+.approach .ahead { fill: var(--muted); }
+.approach .math { font-family: var(--serif); font-style: italic; font-size: 15px; fill: var(--ink); }
+.approach .math .sub, .approach .math .sup { font-size: 10px; }
+.approach .lab { font-family: var(--sans); font-size: 14px; font-weight: 600; fill: var(--ink); letter-spacing: .02em; }
+.approach .note { font-family: var(--sans); font-size: 11px; fill: var(--muted); }
+.approach .math .hat { font-style: normal; font-size: 13px; }
+
+/* Illustrations en tête des pages projet */
+.banner { margin: 1.5rem 0 2rem; overflow-x: auto; }
+.banner .approach { margin: 0; }
+.approach .roadbg { stroke: var(--grid); stroke-width: 9; stroke-linecap: round; }
+.approach .axisclear { stroke: var(--teal); stroke-width: 9; stroke-linecap: round; opacity: .35; }
+.approach .node { fill: var(--surface); stroke: var(--muted); stroke-width: 1.3; }
+.approach .block { fill: var(--surface); stroke: var(--ink); stroke-width: 1.2; }
+.approach .blockstripe { stroke: var(--ink); stroke-width: 1.6; }
+.approach .arrow.strong { stroke: var(--teal); stroke-width: 2; }
+.approach .column { fill: var(--surface); stroke: var(--muted); stroke-width: 1.3; }
+.approach .bead { fill: var(--grid); }
+.approach .band0, .approach .band1, .approach .band2 { fill: var(--prussian); }
+.approach .band0 { opacity: .55; } .approach .band1 { opacity: .35; } .approach .band2 { opacity: .2; }
+.approach .main2 { fill: none; stroke: var(--prussian); stroke-width: 2; opacity: .7; }
+.approach .main3 { fill: none; stroke: var(--prussian); stroke-width: 2; opacity: .45; }
+.approach .blk { fill: var(--prussian); opacity: .85; }
+.approach .subdiag { stroke: var(--teal); stroke-width: 2; }
+.approach .math.inv { fill: var(--surface); font-size: 13px; }
+.approach .ci { fill: none; stroke: var(--teal); stroke-width: 1.2; stroke-dasharray: 5 4; }
+.banner .approach .note { font-size: 17px; }
+.banner .approach .math { font-size: 21px; }
+.banner .approach .math .sub, .banner .approach .math .sup { font-size: 14px; }
+.banner .approach .lab { font-size: 19px; }
+.banner .approach { min-width: 0; }
+.banner .approach .note.sm { font-size: 14px; }
+.site-footer .copy { display: block; margin-top: .6rem; font-size: .85rem; }

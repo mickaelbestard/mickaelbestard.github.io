@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Industrialiser : pipeline MLOps — Mickael Bestard</title>
+  <link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="wrap">
+      <a class="name" href="../index.html">Mickael Bestard</a>
+      <nav>
+        <a href="../index.html#projets">Projets</a>
+        <a href="../cv/cv-mickael-bestard.pdf">CV</a>
+        <a href="mailto:mickael.bestard@gmail.com">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <article class="project">
+      <a class="back" href="../index.html#projets">Retour aux projets</a>
+      <h1>Industrialiser : pipeline MLOps</h1>
+      <p class="lead">Projet personnel : mettre un modèle en production de bout en bout, de l'entraînement au monitoring. <span class="todo">[À compléter : cadre (formation suivie), période]</span></p>
+      <figure class="banner"><svg class="approach" viewBox="0 0 960 262" role="img" aria-label="Chaîne MLOps : données, entraînement, registre de modèles, service de prédiction et monitoring, avec une boucle de réentraînement."><defs><marker id="ah" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" class="ahead"/></marker></defs><rect class="frame" x="11.0" y="70" width="170" height="70" rx="8"/><text class="lab" x="96.0" y="100.0" text-anchor="middle">Données</text><text class="note sm" x="96.0" y="122.0" text-anchor="middle">jeu d'entraînement</text><path class="arrow" d="M187.0,105.0 L197.0,105.0" marker-end="url(#ah)"/><rect class="frame" x="203.0" y="70" width="170" height="70" rx="8"/><text class="lab" x="288.0" y="100.0" text-anchor="middle">Entraînement</text><text class="note sm" x="288.0" y="122.0" text-anchor="middle">MLflow</text><path class="arrow" d="M379.0,105.0 L389.0,105.0" marker-end="url(#ah)"/><rect class="frame" x="395.0" y="70" width="170" height="70" rx="8"/><text class="lab" x="480.0" y="100.0" text-anchor="middle">Registre</text><text class="note sm" x="480.0" y="122.0" text-anchor="middle">modèles versionnés</text><path class="arrow" d="M571.0,105.0 L581.0,105.0" marker-end="url(#ah)"/><rect class="frame" x="587.0" y="70" width="170" height="70" rx="8"/><text class="lab" x="672.0" y="100.0" text-anchor="middle">Service</text><text class="note sm" x="672.0" y="122.0" text-anchor="middle">API Flask</text><path class="arrow" d="M763.0,105.0 L773.0,105.0" marker-end="url(#ah)"/><rect class="frame" x="779.0" y="70" width="170" height="70" rx="8"/><text class="lab" x="864.0" y="100.0" text-anchor="middle">Monitoring</text><text class="note sm" x="864.0" y="122.0" text-anchor="middle">Prometheus, Grafana</text><polyline class="cost" points="789.0,48.6 793.3,44.5 797.6,44.1 801.9,45.2 806.2,44.1 810.5,43.6 814.8,43.9 819.1,46.0 823.4,48.1 827.7,47.6 832.0,49.0 836.3,55.0 840.6,53.2 844.9,57.0 849.2,56.0 853.5,55.1 857.8,53.8 862.1,56.5 866.4,52.7 870.7,48.6 875.0,44.3 879.3,46.3 883.6,43.6 887.9,39.9 892.2,43.5 896.5,43.0 900.8,44.8 905.1,45.3 909.4,46.6 913.7,53.0 918.0,52.7"/><path class="loop" d="M864.0,146 C 864.0,210 288.0,210 288.0,148" marker-end="url(#ah)"/><text class="note" x="576.0" y="210.0" text-anchor="middle">dérive détectée : réentraînement</text><rect class="ci" x="193.0" y="36" width="574.0" height="118" rx="12"/><text class="note" x="201.0" y="30.0" text-anchor="start">CI/CD GitHub Actions, Docker Compose</text></svg></figure>
+      <!-- Projet personnel uniquement. Ne pas présenter comme de la détection de fraude. -->
+
+      <h2>Problème</h2>
+      <p><span class="todo">[À compléter : la tâche de prédiction et les données utilisées]</span></p>
+      <h2>Architecture</h2>
+      <p>Service de prédiction Flask, suivi des expériences et registre de modèles MLflow, métriques exposées à Prometheus et tableaux de bord Grafana, l'ensemble orchestré avec Docker Compose. <span class="todo">[À compléter : choix de conception, ce qui est surveillé]</span></p>
+      <h2>CI/CD</h2>
+      <p>GitHub Actions. <span class="todo">[À compléter : ce que fait le pipeline (tests, build des images, déploiement)]</span></p>
+      <h2>Résultats</h2>
+      <div class="figures">
+        <div><strong><span class="todo">[À compléter]</span></strong><span>Métrique du modèle</span></div>
+        <div><strong><span class="todo">[À compléter]</span></strong><span>Latence du service</span></div>
+        <div><strong><span class="todo">[À compléter]</span></strong><span>Services orchestrés</span></div>
+      </div>
+      <figure>
+        <div class="fig-placeholder">Figure à insérer : assets/img/industrialisation.png</div>
+        <figcaption><span class="todo">[À compléter : schéma d'architecture ou capture du tableau de bord Grafana]</span></figcaption>
+      </figure>
+
+      <h2>Bilan et perspectives</h2>
+      <p><span class="todo">[À compléter : une ou deux phrases]</span></p>
+
+      <h2>Outils</h2>
+      <p class="stack">Python, Flask, MLflow, Prometheus, Grafana, Docker Compose, GitHub Actions</p>
+
+      <h2>Liens</h2>
+      <p class="links">
+        <a href="https://github.com/mickaelbestard/DEPOT">Code (GitHub)</a> <span class="todo">[À compléter : nom du dépôt]</span>
+      </p>
+    </article>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap">
+      <a href="mailto:mickael.bestard@gmail.com">mickael.bestard@gmail.com</a>
+      <a href="https://github.com/mickaelbestard">GitHub</a>
+      <a href="https://www.linkedin.com/in/mbestard">LinkedIn</a>
+      <span class="copy">© 2026 Mickael Bestard</span>
+    </div>
+  </footer>
+</body>
+</html>
